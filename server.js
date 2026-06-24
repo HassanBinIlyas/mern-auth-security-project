@@ -15,12 +15,7 @@ app.use(express.json());
 const db = config.get('mongoURI');
 // Connect to MongoDB
 mongoose
-    .connect(
-        db, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        }
-    )
+    .connect(db)
     .then(() => console.log("MongoDB successfully connected"))
     .catch(err => console.log(err));
 // Passport middleware
